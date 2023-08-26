@@ -13,9 +13,9 @@ for /r %%f in (*.c) do (
 
 set assembly=testbed
 set compilerFlags=-g
-set includeFlags=-Isrc -I../engine/src
-set linkerFlags=-L../bin -lengine.lib
-set defines=-D_DEBUG -DKIMPORT
+set includeFlags=-Isrc -I../engine/src/
+set linkerFlags=-L../bin/ -lengine.lib
+set defines=-D_DEBUG -DCVULIMPORT
 
 echo "Making %assembly%..."
 clang %cFiles% %compilerFlags% -o ../bin/%assembly%.exe %defines% %includeFlags% %linkerFlags%

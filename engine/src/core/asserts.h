@@ -1,4 +1,4 @@
-// NOTE: the file is named asserts due to the prebuilt headers already named assert
+// note to self: the file is named asserts due to the prebuilt headers already named assert
 #pragma once
 #include "def.h"
 
@@ -12,17 +12,18 @@
 #define break_exec() __builtin_trap()
 #endif
 
+// the linker thinks this is fake. why? 
 CVUL_DLL void report_false_assert(const char* exp, const char* message, const char* filepath, i32 line);
 
-#define CVUL_ASSERT(expression)\
-{\
-    if (expression)\
-    {}\
-    else\
-    {\
-    report_false_assert(#expression, "", __FILE__, __LINE__);\
-    break_exec();\
-    }\
+#define CVUL_ASSERT(expression)                                 \
+{                                                               \
+    if (expression)                                             \
+    {}                                                          \
+    else                                                        \
+    {                                                           \
+    report_false_assert(#expression, "", __FILE__, __LINE__);   \
+    break_exec();                                               \
+    }                                                           \
 }
 
 #define CVUL_ASSERTMSG(expression, msg)\

@@ -8,5 +8,6 @@ int main(void)
     CVUL_INFO("testing: %s", "Just a string value!");
 
     CVUL_ASSERT(1 == 0);
+
     return 0;
 }

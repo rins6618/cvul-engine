@@ -85,8 +85,8 @@ STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 #endif
 
 // DLL Exporting
-// When making build files, please add a define flag -DCVUL_EXPORT
-#ifdef CVUL_EXPORT
+// When making build files, please add a define flag -DCVULEXPORT
+#ifdef CVULEXPORT
 #ifdef _MSC_VER
 #define CVUL_DLL __declspec(dllexport)
 #else
