@@ -128,7 +128,7 @@ b8 platform_pump_messages(platform_state* p_state)
     return TRUE;
 }
 
-void *platform_allocate(u64 size, b8 aligned) 
+void *platform_alloc(u64 size, b8 aligned) 
 {
     return malloc(size);
 }
@@ -165,6 +165,7 @@ void platform_console_write(const char *message, u8 color)
     u64 length = strlen(message);
     LPDWORD number_written = 0;
     WriteConsoleA(console_handle, message, (DWORD)length, number_written, 0);
+    SetConsoleTextAttribute(console_handle, levels[5]);
 }
 
 void platform_console_write_err(const char *message, u8 color) 
@@ -177,6 +178,7 @@ void platform_console_write_err(const char *message, u8 color)
     u64 length = strlen(message);
     LPDWORD number_written = 0;
     WriteConsoleA(console_handle, message, (DWORD)length, number_written, 0);
+    SetConsoleTextAttribute(console_handle, levels[5]);
 }
 
 f64 platform_get_abstime()

@@ -1,23 +1,43 @@
 #pragma once
 
-// Unsigned int types.
+/// @file
+/// Commonly used typedefs for integer, floating-point, and boolean types.
+/// Contains platform detection and a DLL Exporting/Importing macro.
+
+/// Unsigned 8-bit integer type.
 typedef unsigned char u8;
+
+/// Unsigned 16-bit integer type.
 typedef unsigned short u16;
+
+/// Unsigned 32-bit integer type.
 typedef unsigned int u32;
+
+/// Unsigned 64-bit integer type.
 typedef unsigned long long u64;
 
-// Signed int types.
+/// Signed 8-bit integer type.
 typedef signed char i8;
+
+/// Signed 16-bit integer type.
 typedef signed short i16;
+
+/// Signed 32-bit integer type.
 typedef signed int i32;
+
+/// Signed 64-bit integer type.
 typedef signed long long i64;
 
-// Floating point types
+/// Single-precision floating-point type.
 typedef float f32;
+
+/// Double-precision floating-point type.
 typedef double f64;
 
-// Boolean types
+/// Boolean 32-bit type.
 typedef int b32;
+
+/// Boolean 8-bit type.
 typedef char b8;
 
 // Properly define static assertions.
@@ -43,6 +63,8 @@ STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 
 #define TRUE 1
 #define FALSE 0
+#define true TRUE
+#define false FALSE
 
 // Platform detection following defined for each platform -- rewritten from memory
 
